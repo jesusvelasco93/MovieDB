@@ -23,13 +23,13 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li ng-class="getClassForItem('movies')">
-                        <a href="#" ng-click="setSelectedItem('movies')">Movies</a>
+                        <a href="#/movies" ng-click="setSelectedItem('movies')">Movies</a>
                     </li>
                     <li ng-class="getClassForItem('series')">
-                        <a href="#" ng-click="setSelectedItem('series')">Series</a>
+                        <a href="#/series" ng-click="setSelectedItem('series')">Series</a>
                     </li>
                     <li ng-class="getClassForItem('people')">
-                        <a href="#" ng-click="setSelectedItem('people')">People</a>
+                        <a href="#/people" ng-click="setSelectedItem('people')">People</a>
                     </li>
                 </ul>
             </div>
@@ -39,11 +39,9 @@
         <!-- Selected item: {{ model.selectedItem }} -->
     </nav>
     <div class="container">
-        <div class="row" ng-controller="MoviesListController">
+        <div class="row">
             <div class="col-xs-12">
-                <input type="text" ng-model="name">
-                <button ng-click="name='Anderson'">Reset</button> 
-                <span> Hello {{ name }}</span>
+                <div ng-view></div>
             </div>
         </div>
     </div>
