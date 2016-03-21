@@ -38,6 +38,15 @@
         <!-- /.container-fluid -->
         <!-- Selected item: {{ model.selectedItem }} -->
     </nav>
+    <div class="container">
+        <div class="row" ng-controller="MoviesListController">
+            <div class="col-xs-12">
+                <input type="text" ng-model="name">
+                <button ng-click="name='Anderson'">Reset</button> 
+                <span> Hello {{ name }}</span>
+            </div>
+        </div>
+    </div>
     <script src="dist/app.js"></script>
 </body>
 
