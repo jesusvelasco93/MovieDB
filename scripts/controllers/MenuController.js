@@ -1,13 +1,14 @@
 
 // En el módulo moviedb, defino el controlador
 angular.module("moviedb").controller("MenuController", 
-    ["$scope", function($scope){
+    ["$scope", function ($scope){
 
 
         // Scope init
         $scope.model = {
             selectedItem: "movies"
         };
+
 
         // Scope methods
         $scope.setSelectedItem = function(item){
@@ -22,5 +23,12 @@ angular.module("moviedb").controller("MenuController",
                 return "";
             }
         };
+
+
+        // Scope Watchers
+        $scope.$watch("model.selectedItem", function(newValue, oldValue){
+            $scope.$emit("OnMenuChange", newValue);
+        });
+
     }]
 );

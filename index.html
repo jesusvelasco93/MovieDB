@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="moviedb">
+<html lang="en" ng-app="moviedb" ng-controller="AppController">
 
 <head>
     <meta charset="UTF-8">
-    <title>Movie DB</title>
+    <title> {{ model.title }} </title>
     <link rel="stylesheet" type="text/css" href="dist/style.css">
 </head>
 
@@ -36,7 +36,7 @@
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->
-        Selected item: {{ model.selectedItem }}
+        <!-- Selected item: {{ model.selectedItem }} -->
     </nav>
     <script src="dist/app.js"></script>
 </body>
