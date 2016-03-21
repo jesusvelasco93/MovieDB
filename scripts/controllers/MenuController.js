@@ -9,6 +9,18 @@ angular.module("moviedb").controller("MenuController",
             selectedItem: "movies"
         };
 
-        
+        // Scope methods
+        $scope.setSelectedItem = function(item){
+            $scope.model.selectedItem = item;
+        };
+
+        $scope.getClassForItem = function(item){
+            if ($scope.model.selectedItem == item){
+                return "active";
+            }
+            else {
+                return "";
+            }
+        };
     }]
 );

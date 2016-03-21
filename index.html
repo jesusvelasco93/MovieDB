@@ -22,14 +22,14 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a href="#">Movies</a>
+                    <li ng-class="getClassForItem('movies')">
+                        <a href="#" ng-click="setSelectedItem('movies')">Movies</a>
                     </li>
-                    <li>
-                        <a href="#">Series</a>
+                    <li ng-class="getClassForItem('series')">
+                        <a href="#" ng-click="setSelectedItem('series')">Series</a>
                     </li>
-                    <li>
-                        <a href="#">People</a>
+                    <li ng-class="getClassForItem('people')">
+                        <a href="#" ng-click="setSelectedItem('people')">People</a>
                     </li>
                 </ul>
             </div>
@@ -38,7 +38,7 @@
         <!-- /.container-fluid -->
         Selected item: {{ model.selectedItem }}
     </nav>
-    <script type="dist/app.js"></script>
+    <script src="dist/app.js"></script>
 </body>
 
 </html>
