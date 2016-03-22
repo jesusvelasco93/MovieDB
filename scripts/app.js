@@ -15,5 +15,4 @@ angular.module("moviedb", ['ngRoute']).config(
             templateUrl: 'views/404.html'
         })
     }]
-
 );
