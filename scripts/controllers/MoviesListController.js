@@ -1,10 +1,13 @@
 angular.module("moviedb").controller("MoviesListController", 
-    ["$scope", "$log", "MovieService", 
-    function ($scope, $log, MovieService) {
+    ["$scope", "$log", "MovieService", "URL", "paths", 
+    function ($scope, $log, MovieService, URL, paths) {
 
         // Scope init
         $scope.uiState = 'blank';
         $scope.model = [];
+        $scope.getMovieDetailURL = function (movie) {
+            return URL.resolve(paths.movieDetail, { id: movie.id});
+        }
 
         // Controller start
         $scope.uiState = 'loading';

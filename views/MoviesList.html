@@ -5,9 +5,7 @@
         <p class="lead">No data here</p>
     </div>
 
-    <div class="progress" ng-show="uiState=='loading'">
-      <div class="progress-bar progress-bar-striped active" role="progressbar" style="width: 100%"></div>
-    </div>
+    <div ng-include="'views/ProgressBar.html'" ng-show="uiState=='loading'"></div>
 
     <div class="alert alert-danger" ng-show="uiState=='error'">
         <p class="lead">ERROR 404 ;-(</p>
@@ -20,6 +18,7 @@
                 <th>Title</th>
                 <th>Year</th>
                 <th>Rating</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -37,6 +36,10 @@
                 <td>
                     {{::item.rating}}
                     ({{::item.rating | schoolrating:"US" }})
+                </td>
+                <td>
+                    <a href="#{{::getMovieDetailURL(item) }}" class="btn btn-default">
+                        View
                 </td>
             </tr>
         </tbody>
