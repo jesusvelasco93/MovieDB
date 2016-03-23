@@ -3,5 +3,6 @@ angular.module("moviedb").constant("paths", {
    movies: "/movies",
    movieDetail: "/movies/:id", 
    series: "/series",
-   people: "/people"
+   people: "/people",
+   notFound: "/404"
 });
