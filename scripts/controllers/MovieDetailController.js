@@ -18,6 +18,7 @@ angular.module("moviedb").controller("MovieDetailController",
             // película rechazada
             function(error){
 
+                // TODO error manager
                 $location.url(paths.notFound);
             }
 
