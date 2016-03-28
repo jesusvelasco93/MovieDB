@@ -1,0 +1,32 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Poster</th>
+            <th>Title</th>
+            <th>Year</th>
+            <th>Rating</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in model">
+            <td>
+                <img ng-src=" {{::item.poster_url}}" alt="{{::item.title}}'s poster" title="{{::item.title}}" style="width: 95px">
+            </td>
+            <td>
+                {{::item.title}}
+            </td>
+            <td>
+                {{::item.release_date | date:"dd/MM/yyyy"}}
+                <br> ({{::item.release_date | ago }})
+            </td>
+            <td>
+                {{::item.rating}} ({{::item.rating | schoolrating:"US" }})
+            </td>
+            <td>
+                <a href="#{{::getDetailUrl(item) }}" class="btn btn-default">
+                        View
+                </td>
+            </tr>
+        </tbody>
+</table>

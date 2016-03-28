@@ -5,6 +5,7 @@ angular.module("moviedb").filter("categories",
                 return;
             }
             else if (typeof(array) !== "object"){
+                console.error("The param of categories´s filter cant be different to array");
                 return;
             }
             else { 

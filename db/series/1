@@ -1,0 +1,9 @@
+{
+    "id": 1,
+    "title": "The Walking Dead",
+    "poster_url": "https://image.tmdb.org/t/p/w185/vxuoMW6YBt6UsxvMfRNwRl9LtWS.jpg",
+    "rating": 7.3,
+    "release_date": "2010",
+    "overview": "Sheriff's deputy Rick Grimes awakens from a coma to find a post-apocalyptic world dominated by flesh-eating zombies. He sets out to find his family and encounters many other survivors along the way.",
+    "categories": ["Drama"]
+}
