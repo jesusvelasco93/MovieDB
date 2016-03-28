@@ -1,6 +1,6 @@
 angular.module("moviedb").controller("MoviesListController", 
-    ["$scope", "$log", "MovieService", "URL", "paths", 
-    function ($scope, $log, MovieService, URL, paths) {
+    ["$scope", "$log", "APIClient", "URL", "paths", 
+    function ($scope, $log, APIClient, URL, paths) {
 
         // Scope init
         $scope.uiState = 'blank';
@@ -11,7 +11,7 @@ angular.module("moviedb").controller("MoviesListController",
 
         // Controller start
         $scope.uiState = 'loading';
-        MovieService.getMovies().then(
+        APIClient.getMovies().then(
             // promesa resuelta
             function(data){
                 $log.log("SUCCESS", data);
