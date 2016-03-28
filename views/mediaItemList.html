@@ -6,12 +6,12 @@
             <th>Year</th>
             <th>Rating</th>
             <th>
-                <input type="search" ng-model="query" placeholder="Search..">
+                <input type="search" ng-model="query.title" placeholder="Search.." class="form-control">
             </th>
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="item in model">
+        <tr ng-repeat="item in model | filter:query">
             <td>
                 <img ng-src=" {{::item.poster_url}}" alt="{{::item.title}}'s poster" title="{{::item.title}}" style="width: 95px">
             </td>
