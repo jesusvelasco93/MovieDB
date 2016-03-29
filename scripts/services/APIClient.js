@@ -45,5 +45,26 @@ angular.module("moviedb").service("APIClient",
             return this.apiRequest(url);
 
         };
+
+        this.createMovie = function(movie) {
+            // crear el objeto diferido
+            var deferred = $q.defer();
+
+            //hacer el trabajo asíncrono
+            $http.post(apiPaths.movies, movie).then(
+                // peticion OK
+                function(response){
+                    //resolver la promesa
+                    deferred.resolve(response.data);
+                },
+                // peticion KO
+                function(response){
+                    //rechazar la promesa
+                    deferred.reject(response.data);
+                }
+            );
+            //devolver la promesa
+            return deferred.promise;
+        };
     }]
 );

@@ -6,6 +6,7 @@ angular.module("moviedb").controller("AppController",
         // Controller properties
         controller.titles = {}
         controller.titles[paths.movies] = "Movies List";
+        controller.titles[paths.newMovie] = "New Movie";
         controller.titles[paths.series] = "Series List";
         controller.titles[paths.people] = "People List";
 
