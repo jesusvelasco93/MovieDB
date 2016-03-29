@@ -1,5 +1,6 @@
 angular.module("moviedb").filter("join",
     ["$log", function($log){
+        // Para usarlo hay que quitar los :: del parametros del filtro
         return function(arr, sep){
             var items = arr || null;
             var separator = sep || ", ";

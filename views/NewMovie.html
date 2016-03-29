@@ -1,0 +1,62 @@
+<div>
+    <h1>New movie</h1>
+    <form name="movieForm" novalidate class="form-horizontal">
+        <div class="form-group" ng-class="{ 'has-success': movieForm.title.$valid, 'has-error': movieForm.title.$invalid && movieForm.title.$dirty }">
+            <label for="title" class="col-sm-2 control-label">Title</label>
+            <div class="col-sm-10">
+                <input type="text" name="title" ng-model="model.title" required class="form-control" maxlength="50">
+                <div class="text-danger" ng-show="movieForm.title.$dirty && movieForm.title.$error.required">
+                    The title is required.
+                </div>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{ 'has-success': movieForm.poster_url.$valid, 'has-error': movieForm.poster_url.$invalid && movieForm.poster_url.$dirty }">
+            <label for="poster_url" class="col-sm-2 control-label">Poster URL</label>
+            <div class="col-sm-10">
+                <input type="url" name="poster_url" ng-model="model.poster_url" required class="form-control">
+                <div class="text-danger" ng-show="movieForm.poster_url.$dirty && movieForm.poster_url.$error.required">
+                    The poster is required.
+                </div>
+                <div class="text-danger" ng-show="movieForm.poster_url.$dirty && movieForm.poster_url.$error.url">
+                    Please, enter a URL valid.
+                </div>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{ 'has-success': movieForm.rating.$valid, 'has-error': movieForm.rating.$invalid && movieForm.rating.$dirty}">
+            <label for="rating" class="col-sm-2 control-label">Rating</label>
+            <div class="col-sm-10">
+                <input type="number" name="rating" ng-model="model.rating" required class="form-control" min="0" max="10">
+                <div class="text-danger" ng-show="movieForm.rating.$dirty && movieForm.rating.$error.required">
+                    The rating is required.
+                </div>
+                <div class="text-danger" ng-show="movieForm.rating.$dirty && (movieForm.rating.$error.number || movieForm.rating.$error.min || movieForm.rating.$error.max)">
+                    The rating must be a number between 0 and 10.
+                </div>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{ 'has-success': movieForm.release_date.$valid, 'has-error': movieForm.release_date.$invalid && movieForm.realese_date.$dirty}">
+            <label for="release_date" class="col-sm-2 control-label">Release date</label>
+            <div class="col-sm-10">
+                <input type="date" name="release_date" ng-model="model.release_date" required class="form-control">
+                <div class="text-danger" ng-show="movieForm.release_date.$dirty && movieForm.release_date.$error.required">
+                    The date is required.
+                </div>
+                <div class="text-danger" ng-show="movieForm.release_date.$dirty && movieForm.release_date.$error.date">
+                    The date must be valid.
+                </div>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{ 'has-success': movieForm.overview.$valid, 'has-error': movieForm.overview.$invalid && movieForm.overview.$dirty}">
+            <label for="overview" class="col-sm-2 control-label">Overview</label>
+            <div class="col-sm-10">
+                <textarea badwords name="overview" ng-model="model.overview" required class="form-control" rows="5"></textarea>
+                <div class="text-danger" ng-show="movieForm.overview.$dirty && movieForm.overview.$error.required">
+                    The overview is required.
+                </div>
+            </div>
+        </div>
+        <div>
+            <button class="btn btn-primary pull-right" type="submit" ng-disabled="movieForm.$invalid">Crear</button>
+        </div>
+    </form>
+</div>
