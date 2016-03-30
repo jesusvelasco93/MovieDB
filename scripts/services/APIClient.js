@@ -24,7 +24,7 @@ angular.module("moviedb").service("APIClient",
         };
 
         this.getMovies = function() {
-
+            console.log(this.apiRequest(apiPaths.movies));
             return this.apiRequest(apiPaths.movies);
 
         };
